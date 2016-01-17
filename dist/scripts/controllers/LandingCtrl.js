@@ -1,8 +1,8 @@
 (function() {
   function LandingCtrl($firebaseObject) {
-    var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/");
+    var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/data");
 
-    this.data = $firebastObject(ref);
+    this. data = $firebaseObject(ref);
     this.heroTitle = "Is this thing on?";
   }
 

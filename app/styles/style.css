@@ -1,0 +1,40 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans';
+    font-size: 18px;
+    color: #333;
+    min-height: 100%;
+}
+
+.hero-title {
+  width: 40%;
+  height: 2.5rem;
+  font-size: 1.50rem;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 10rem auto 0 auto;
+}
+
+.task-heading {
+  font-size: 1.2rem;
+  background-color: #808080;
+  text-align: left;
+}
+
+.task-list {
+  width: 40%;
+  height: 80%;
+  text-align: center;
+  margin: 20px auto 0 auto;
+  background-color: #DDD5D5;
+  position: relative;
+}

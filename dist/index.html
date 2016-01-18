@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html ng-app="blocitoff">
+
 <head lang="en">
   <meta charset="UTF-8">
   <title>Bloc Base Project</title>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
 </head>
 
 <ui-view></ui-view>
 
 <body>
+
+  <section class="hero"> <!-- hero content -->
+    <div>
+      <h1 class="hero-title">Blocitoff Task App</h1>
+    </div>
+  </section>
+
+  <section class="task-container"> <!-- task list -->
+    <div>
+      <table class="task-list">
+        <th class="task-heading">Current Tasks</th>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+          <tr>
+            <td>this is a row</td>
+          </tr>
+      </table>
+    </div>
+  </section>
+
   <script src="/scripts/app.js"></script>
   <!-- AngularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>

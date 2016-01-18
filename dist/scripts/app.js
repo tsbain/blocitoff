@@ -11,6 +11,12 @@
         url: '/',
         controller: 'LandingCtrl as landing',
         templateUrl: '/templates/landing.html'
+      })
+
+      .state('list', {
+        url: '/',
+        controller: 'ListCtrl as list',
+        templateUrl: '/templates/list.html'
       });
   }
 

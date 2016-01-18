@@ -2,7 +2,7 @@
   function ListCtrl($firebaseArray) {
     var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
 
-    this.items = $firebaseArray(ref);
+    this.tasks = $firebaseArray(ref);
   }
 
   angular

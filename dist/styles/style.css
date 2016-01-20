@@ -1,7 +1,7 @@
 *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -9,32 +9,75 @@ html {
 }
 
 body {
-    font-family: 'Open Sans';
-    font-size: 18px;
-    color: #333;
-    min-height: 100%;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  color: #333;
+  min-height: 100%;
 }
-
-.hero-title {
+h1 {
   width: 40%;
-  height: 2.5rem;
-  font-size: 1.50rem;
+  font-size: 5.0rem;
   text-align: center;
-  vertical-align: bottom;
   margin: 10rem auto 0 auto;
 }
 
+h2 {
+  font-family: 'Open Sans';
+  margin: 75px 0 40px 0;
+}
+
 .task-heading {
-  font-size: 1.2rem;
-  background-color: #808080;
-  text-align: left;
+  font-size: 2.5rem;
+  background-color: #B4B4B4;
+  text-align: center;
 }
 
 .task-list {
-  width: 40%;
+  width: 80%;
   height: 80%;
   text-align: center;
-  margin: 20px auto 0 auto;
-  background-color: #DDD5D5;
+  margin: 0px auto 50px auto;
+  background-color: #F9F9F9;
   position: relative;
+}
+
+td {
+  text-align: left;
+}
+
+#desc {
+  background-color: #F2F2F2;
+}
+
+.add-tasks {
+  text-align: center;
+}
+
+.form-group {
+}
+
+label {
+  font-size: 2.8rem;
+  font-family: 'Open Sans';
+  font-weight: 100;
+  margin-right: 15px;
+  color: #8B8C8C;
+  display: inline-block;
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 30%;
+}
+
+input {
+  display: inline-block;
+  float: left;
+  width: 500px;
+  margin-bottom: 25px;
+}
+
+.btn.btn-primary.btn-lg {
+  display: inline-block;
+  position: absolute;
+  margin-top: 20px;
 }

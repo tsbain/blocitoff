@@ -7,10 +7,10 @@
       });
 
     $stateProvider
-      .state('landing', {
+      .state('list', {
         url: '/',
-        controller: 'LandingCtrl as landing',
-        templateUrl: '/templates/landing.html'
+        controller: 'ListCtrl as list',
+        templateUrl: '/templates/list.html'
       });
   }
 

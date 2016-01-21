@@ -20,25 +20,24 @@
 
 </section>
 
-<section class="add-tasks">
+<section class="add-tasks"> <!-- create new tasks -->
 
   <hr></hr>
-  <h2>Add a New Task</h2>
+  <h2>Create a New Task</h2>
 
-  <div class="form-group">
+  <form class="form-group">
     <label class="label-text" for="newTaskInput">Title</label>
-    <input class="input-field" type="text" value="task" ng-model="list.task.title">
-  </div>
-  <div class="form-group">
-    <label for="newTaskInput">Note</label>
-    <input type="text" ng-model="list.task.description">
-  </div>
-  <div class="form-group">
+    <input type="text" name="newTaskInput" ng-model="list.newTask.title">
+    <label class="label-text"for="newTaskInput">Note</label>
+    <input type="text" name="newTaskInput" ng-model="list.newTask.description">
+  </form>
+
+  <div class="button-group">
     <button type="button" name="button" class="btn btn-primary btn-lg" ng-click="list.createTask(list.newTask)">Add Task</button>
   </div>
 
-</section>
-
 <!-- <pre>
-  {{ list.task | json }}
+  {{ list.newTask | json }}
 </pre> -->
+
+</section>

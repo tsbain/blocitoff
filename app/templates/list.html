@@ -9,11 +9,17 @@
   <div>
     <table class="task-list table">
       <tr>
-        <th class="task-heading" colspan="2">Current Tasks</th>
+        <th class="task-heading" colspan="3">Current Tasks</th>
       </tr>
-      <tr ng-repeat="task in list.tasks">
-        <td class="col-md-4">{{ task.title }}</td>
-        <td class="col-md-8" id="desc">{{ task.description }}</td>
+      <tr class="list-headings">
+        <th ng-click="sortBy='title';reverse=!reverse">Task</th>
+        <th>Note</th>
+        <th ng-click="sortBy='date';reverse=!reverse">Due</th>
+      </tr>
+      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse">
+        <td class="col-md-4" id="title">{{ task.title }}</td>
+        <td class="col-md-6" id="desc">{{ task.description }}</td>
+        <td class="col-md-4" id="date">{{ task.date | date: 'shortDate' }}</td>
       </tr>
     </table>
   </div>
@@ -26,15 +32,19 @@
   <h2>Create a New Task</h2>
 
   <form class="form-group">
-    <label class="label-text" for="newTaskInput">Title</label>
+    <label class="label-text" for="newTaskInput">Title:</label>
     <input type="text" name="newTaskInput" ng-model="list.newTask.title">
-    <label class="label-text"for="newTaskInput">Note</label>
+    <label class="label-text" for="newTaskInput">Note:</label>
     <input type="text" name="newTaskInput" ng-model="list.newTask.description">
+    <label class="label-text" for="newTaskInput">Date Due:</label>
+    <input type="text" name="newTaskInput" ng-model="list.newTask.date" placeholder="mm/dd/yyyy">
+
+    <div class="button-group">
+      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)" onClick="clearForm();">Add Task</button>
+    </div>
   </form>
 
-  <div class="button-group">
-    <button type="button" name="button" class="btn btn-primary btn-lg" ng-click="list.createTask(list.newTask)">Add Task</button>
-  </div>
+
 
 <!-- <pre>
   {{ list.newTask | json }}

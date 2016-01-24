@@ -5,13 +5,14 @@
 
     this.tasks = $firebaseArray(ref);
     this.newTask = {};
-
+    
     this.createTask = function(task) {
       scope.tasks.$add(task).then(function(ref) {
         scope.task = {};
       });
     }
   }
+
 
   angular
     .module('blocitoff')

@@ -18,3 +18,9 @@
     .module('blocitoff', ['ui.router', 'firebase'])
     .config(config);
 })();
+
+function clearForm() {
+  document.getElementById("title").value="";
+  document.getElementById("desc").value="";
+  document.getElementById("date").value="";
+}

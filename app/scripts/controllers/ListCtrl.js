@@ -5,10 +5,12 @@
 
     this.tasks = $firebaseArray(ref);
     this.newTask = {};
-    
+
     this.createTask = function(task) {
+      task.date = task.dateObject.getTime();
+      delete task.dateObject;
       scope.tasks.$add(task).then(function(ref) {
-        scope.task = {};
+        scope.newTask = {};
       });
     }
   }

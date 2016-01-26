@@ -10,8 +10,8 @@
     <table class="task-list table">
       <tr>
         <td class="icons">
-            <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Create a Task">create</i></a>
-            <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Delete a Task">delete</i></a>
+            <i class="material-icons md-36" title="Create a Task">create</i>
+            <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Delete a Task">delete</a></i>
             <i class="material-icons md-36" title="View History">history</i>
         </td>
       </tr>
@@ -22,7 +22,7 @@
         <th ng-click="sortBy='title';reverse=!reverse">Task</th>
         <th>Note</th>
         <th ng-click="sortBy='date';reverse=!reverse">Due</th>
-        <th>Done</th>
+        <th ng-show="deleteTask">Delete</th>
       </tr>
       <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse">
         <td class="col-md-4" id="title">{{ task.title }}</td>
@@ -37,36 +37,12 @@
     </table>
   </div>
 
-</section>
-
-<section id="form" class="add-tasks"> <!-- create new tasks -->
-
   <hr></hr>
-
-  <form class="form-group" ng-show="addTask">
-    <h2>Create a New Task</h2>
-    <label class="label-text" for="newTaskInput">Title:</label>
-    <input type="text" name="newTaskInput" ng-model="list.newTask.title">
-    <label class="label-text" for="newTaskInput">Note:</label>
-    <input type="text" name="newTaskInput" ng-model="list.newTask.description">
-    <label class="label-text" for="newTaskInput">Date Due:</label>
-    <input type="text" name="newTaskInput" ng-model="list.newTask.date" placeholder="mm/dd/yyyy">
-
-    <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)" onClick="clearForm();">Add Task</button>
-    </div>
-  </form>
 
   <form class="form-group" ng-show="deleteTask">
     <div class="button-group">
       <button type="button" name="button" class="btn" ng-click="list.deleteTask(list.newTask)" onClick="clearForm();">Delete Tasks</button>
     </div>
   </form>
-
-
-
-<!-- <pre>
-  {{ list.newTask | json }}
-</pre> -->
 
 </section>

@@ -22,7 +22,7 @@
         <th ng-click="sortBy='title';reverse=!reverse">Task</th>
         <th>Note</th>
         <th ng-click="sortBy='date';reverse=!reverse">Due</th>
-        <th>Done</th>
+        <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
       <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse">
         <td class="col-md-4" id="title">{{ task.title }}</td>
@@ -44,7 +44,10 @@
   <hr></hr>
 
   <form class="form-group" ng-show="addTask">
+    <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Close">clear</i></a>
+    </br>
     <h2>Create a New Task</h2>
+    <hr></hr>
     <label class="label-text">Title:</label>
     <input type="text" ng-model="list.newTask.title">
     <label class="label-text">Note:</label>
@@ -53,13 +56,20 @@
     <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
 
     <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)" onClick="clearForm();">Add Task</button>
+      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)" onClick="clearForm();">Create</button>
     </div>
   </form>
 
   <form class="form-group" ng-show="deleteTask">
+    <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Close">clear</i></a>
+    </br>
+    <h2>Delete Checked Tasks</h2>
+    <hr></hr>
+    <i class="material-icons md-36" id="warning" title="Warning!">warning</i>
+    <h4>Warning:  You will have to recreate these tasks if you need them again!</h4>
+    <br></br>
     <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.deleteTask(list.newTask)" onClick="clearForm();">Delete Tasks</button>
+      <button type="button" name="button" class="btn" ng-click="list.removeTask(task)">Delete</button>
     </div>
   </form>
 

@@ -6,11 +6,23 @@
     this.tasks = $firebaseArray(ref);
     this.newTask = {};
 
-    this.deleteTask = function(task) {
+    // Remove a Task 1
+
+    this.removeTask = function(task) {
       scope.tasks.$remove(task).then(function(ref) {
-        scope.task = {};
+        scope.newTask = {};
       });
     }
+
+    // Remove a Task 2
+
+    // this.removeTask = function(task) {
+    //   this.tasks = this.tasks.filter(function(i) {
+    //     return !i.selected;
+    //   });
+    // };
+
+
   }
 
 

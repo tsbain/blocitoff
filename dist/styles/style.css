@@ -14,6 +14,7 @@ body {
   color: #333;
   min-height: 100%;
   background-image: url(../assets/images/bg3.jpg);
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -31,6 +32,11 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  color: #333;
+  text-align: center;
+}
+
 .task-heading {
   font-family: 'Open Sans';
   font-weight: 400;
@@ -44,7 +50,7 @@ h2 {
   position: absolute;
   top: -50px;
   right: 0;
-  border-top: none !important;  
+  border-top: none !important;
 }
 
 th {
@@ -72,6 +78,15 @@ td {
 #done {
   text-align: center;
   vertical-align: middle;
+}
+
+#completed {
+  color: #1AB61B;
+}
+
+#warning {
+  color: #dd3333;
+  float:left;
 }
 
 .checkbox {
@@ -163,7 +178,7 @@ input[type="date"]:focus {
 }
 
 .btn {
-  padding: 15px 40px 15px 40px;
+  padding: 10px 30px 10px 30px;
   color: #1AB61B;
   background-color: transparent;
   font-size: 28px;
@@ -174,7 +189,7 @@ input[type="date"]:focus {
   border: 1px solid #1AB61B;
   border-color: #1AB61B;
   margin-bottom: 10px;
-  margin-top: 35px;
+  margin-top: 10px;
   transition-property: background;
   transition-duration: .25s;
   transition-timing-function: linear;

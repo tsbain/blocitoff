@@ -208,6 +208,10 @@ input[type="date"]:focus {
   color: #fff;
 }
 
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
 pre {
   width: 300px;
   margin-left: 25px;

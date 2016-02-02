@@ -2,6 +2,8 @@
   function ListCtrl($firebaseArray) {
     var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
     var scope = this;
+    var oneDay = 1000 * 60 * 60 * 24;
+    var today = new Date();
 
     this.tasks = $firebaseArray(ref);
     this.newTask = {};
@@ -13,6 +15,14 @@
         scope.newTask = {};
       });
     }
+
+    this.shouldHideTask = function(task) {
+      // set boolean value for ng-show directive
+      var diff = task.date - today.getTime();
+      var dayDiff = Math.round(diff/oneDay);
+      return dayDiff >= 7;
+    }
+
   }
 
   angular

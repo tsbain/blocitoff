@@ -24,7 +24,7 @@
         <th ng-click="sortBy='date';reverse=!reverse">Due</th>
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse">
+      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" ng-hide="list.shouldHideTask( task )">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
         <td class="col-md-2" id="date">{{ task.date | date: 'shortDate' }}</td>
@@ -56,7 +56,7 @@
     <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
 
     <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)" onClick="clearForm();">Create</button>
+      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)">Create</button>
     </div>
   </form>
 
@@ -72,8 +72,6 @@
       <button type="button" name="button" class="btn" ng-click="list.removeTask(task)">Delete</button>
     </div>
   </form>
-
-
 
 <!-- <pre>
   {{ list.newTask | json }}

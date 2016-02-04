@@ -71,6 +71,10 @@ td {
   text-align: left;
 }
 
+#settings {
+  float: left;
+}
+
 #desc, #done {
   background-color: #F1F1F1;
 }

@@ -16,14 +16,6 @@
       });
     }
 
-    this.removeTask = function(task) {
-      // task.date = task.dateObject.getTime();
-      // delete task.dateObject;
-      scope.tasks.$remove(task).then(function(ref) {
-        scope.newTask = {};
-      });
-    }
-
     this.shouldHideTask = function(task) {
       // set boolean value for ng-show directive
       var diff = task.date - today.getTime();

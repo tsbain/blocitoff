@@ -243,3 +243,14 @@ a:visited, a:active {
   color: inherit;
   text-decoration: none;
 }
+
+/* Start of history template styling */
+
+#historyTitle {
+  text-decoration: line-through;
+}
+
+#notCompleted {
+  color: #1AB61B;
+  margin-right: 10px;
+}

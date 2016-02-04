@@ -6,14 +6,6 @@
     this.tasks = $firebaseArray(ref);
     this.newTask = {};
 
-    // Hide a Task 1
-
-    var timeStamp = x; // where 'x' is the timestamp from firebase
-    var date = new Date(timeStamp);
-    alert(date.toString());
-
-
-
   }
 
 

@@ -1,0 +1,40 @@
+<section> <!-- hero content -->
+
+    <h1>{{ list.heroTitle }}</h1>
+
+</section>
+
+<section class="task-container"> <!-- task list -->
+
+  <div>
+    <table class="task-list table">
+      <tr>
+        <td class="icons">
+            <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Create a Task">create</i></a>
+            <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Delete a Task">delete</i></a>
+            <a ui-sref="list"><i class="material-icons md-36" title="Active Tasks">history</i></a>
+        </td>
+      </tr>
+      <tr>
+        <th class="task-heading" colspan="4">Task History</th>
+      </tr>
+      <tr class="list-headings">
+        <th ng-click="sortBy='title';reverse=!reverse">Task</th>
+        <!-- <th>Note</th> -->
+        <!-- <th ng-click="sortBy='date';reverse=!reverse">Due</th> -->
+        <th><i class="material-icons md-36" id="notCompleted" title="Not Completed">done</i></th>
+      </tr>
+      <tr ng-repeat="task in history.tasks | orderBy:sortBy:reverse">
+        <td class="col-md-11" id="historyTitle">{{ task.title }}</td>
+        <!-- <td class="col-md-6" id="desc">{{ task.description }}</td>
+        <td class="col-md-2" id="date">{{ task.date | date: 'shortDate' }}</td> -->
+        <td class="col-md-2" id="done">
+          <label>
+            <input type="checkbox" class="checkbox" id="done" name="">
+          </label>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</section>

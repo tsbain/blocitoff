@@ -9,19 +9,34 @@
     this.newTask = {};
 
     this.createTask = function(task) {
-      task.date = task.dateObject.getTime();
+      task.dueDate = task.dateObject.getTime();
       delete task.dateObject;
+      task.dateCreated = Firebase.ServerValue.TIMESTAMP;
+      task.completed = false;
       scope.tasks.$add(task).then(function(ref) {
         scope.newTask = {};
       });
     }
 
     this.shouldHideTask = function(task) {
-      // set boolean value for ng-show directive
-      var diff = task.date - today.getTime();
+      // set boolean value for ng-hide directive
+      var diff = today.getTime() - task.dateCreated;
       var dayDiff = Math.round(diff/oneDay);
       return dayDiff >= 7;
     }
+
+    this.toggle = function(task) {
+      task.completed = !task.completed;
+      this.tasks.$save(task).then(function(ref) {
+        console.log(ref, 'save was successful');
+        console.log(task.completed);
+      });
+    }
+
+    // this.completeTask = function(task) {
+    //   // task.completed = true;
+    //
+    // }
 
   }
 

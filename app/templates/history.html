@@ -10,7 +10,7 @@
     <table class="task-list table">
       <tr>
         <td class="icons">
-            <a ui-sref=""><i class="material-icons md-36" id="settings" title="Settings">settings</i></a>
+            <a ui-sref="list"><i class="material-icons md-36" id="settings" title="Settings">settings</i></a>
             <a ui-sref="list"><i class="material-icons md-36" title="Active Tasks">list</i></a>
         </td>
       </tr>
@@ -21,11 +21,11 @@
         <th ng-click="sortBy='title';reverse=!reverse">Task</th>
         <th><i class="material-icons md-36" id="notCompleted" title="Not Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in history.tasks | orderBy:sortBy:reverse">
+      <tr ng-repeat="task in history.tasks | orderBy:sortBy:reverse" ng-show="history.shouldShowTask( task ) || task.completed">
         <td class="col-md-11" id="historyTitle">{{ task.title }}</td>
         <td class="col-md-2" id="done">
           <label>
-            <input type="checkbox" class="checkbox" id="done" name="">
+            <input type="checkbox" class="checkbox" id="done" checked ng-click="history.toggle(task)">
           </label>
         </td>
       </tr>

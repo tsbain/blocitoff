@@ -28,8 +28,8 @@
     this.toggle = function(task) {
       task.completed = !task.completed;
       this.tasks.$save(task).then(function(ref) {
-        console.log(ref, 'save was successful');
-        console.log(task.completed);
+        // console.log(ref, 'save was successful');
+        // console.log(task.completed);
       });
     }
 

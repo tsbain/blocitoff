@@ -4,7 +4,7 @@
 
 </section>
 
-<section class="task-container"> <!-- task list -->
+<section class="container"> <!-- task list -->
 
   <div>
     <table class="task-list table">
@@ -17,18 +17,20 @@
         </td>
       </tr>
       <tr>
-        <th class="task-heading" colspan="4">Current Tasks</th>
+        <th class="task-heading" colspan="5">Current Tasks</th>
       </tr>
       <tr class="list-headings">
         <th ng-click="sortBy='title';reverse = !reverse">Task</th>
         <th>Note</th>
         <th ng-click="sortBy='dueDate';reverse = !reverse">Due</th>
+        <!-- <th ng-click="sortBy='priority';reverse = !reverse">Priority</th> -->
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
       <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" ng-hide="list.shouldHideTask(task) || task.completed">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
-        <td class="col-md-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
+        <td class="col-lg-4" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
+        <!-- <td class="col-md-2" id="priority">{{ task.priority }}</td> -->
         <td class="col-md-2" id="done">
           <label>
             <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task)">
@@ -55,6 +57,12 @@
     <input type="text" ng-model="list.newTask.description">
     <label class="label-text">Date Due:</label>
     <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
+    <label class="label-text">Priority:</label>
+    <select name="priority" ng-model="list.newTask.priority">
+      <option value="Urgent">Urgent</option>
+      <option value="Normal">Normal</option>
+      <option value="Meh" selected>Meh</option>
+    </select>
 
     <div class="button-group">
       <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)">Create</button>

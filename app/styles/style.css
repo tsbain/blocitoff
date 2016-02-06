@@ -13,8 +13,9 @@ body {
   font-size: 18px;
   color: #333;
   min-height: 100%;
-  background-image: url(../assets/images/bg3.jpg);
+  background-image: url(../assets/images/bg4.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -56,10 +57,12 @@ h4 {
 th {
   border-bottom: 1px solid #1AB61B;
   font-size: 2.0rem;
+  vertical-align: bottom !important;
+  padding-bottom: 0px !important;
 }
 
 .task-list {
-  width: 80%;
+  width: 90%;
   height: 80%;
   text-align: center;
   margin: 0px auto 50px auto;
@@ -69,6 +72,8 @@ th {
 
 td {
   text-align: left;
+  height: 75px;
+  vertical-align: middle !important;
 }
 
 #settings {
@@ -165,7 +170,8 @@ select {
 }
 
 input[type="text"]:focus,
-input[type="date"]:focus {
+input[type="date"]:focus,
+select:focus {
   border: 2px solid #1AB61B;
   box-shadow: 0 0 5px rgba(032, 266, 033, 1);
 }
@@ -231,6 +237,13 @@ pre {
   float: right;
   margin-left: 10px;
   /*color: rgba(255, 255, 255, 1)*/
+}
+
+.material-icons.md-36 {
+  /*font-size: 36px;*/
+  color: rgba(0, 0, 0, 0.54);
+  float: right;
+  margin-left: 10px;
 }
 
 a {

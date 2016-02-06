@@ -29,7 +29,7 @@
       <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" ng-hide="list.shouldHideTask(task) || task.completed">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
-        <td class="col-lg-4" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
+        <td class="col-lg-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
         <!-- <td class="col-md-2" id="priority">{{ task.priority }}</td> -->
         <td class="col-md-2" id="done">
           <label>

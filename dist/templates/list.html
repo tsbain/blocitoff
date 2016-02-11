@@ -30,7 +30,7 @@
         <td class="col-lg-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
         <td class="col-md-2" id="done">
           <label>
-            <input type="checkbox" class="checkbox" id="done" ng-model="delayedModel" debounce="500" ng-click="list.toggle(task)">
+            <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task)">
           </label>
         </td>
       </tr>
@@ -48,21 +48,13 @@
     </br>
     <h2>Create a New Task</h2>
     <hr></hr>
-    <label class="label-text">Title:</label>
-    <input type="text" ng-model="list.newTask.title">
-    <label class="label-text">Note:</label>
-    <input type="text" ng-model="list.newTask.description">
-    <label class="label-text">Date Due:</label>
-    <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
-
-
-    <!-- <label class="label-text">Priority:</label> -->
-    <!-- <select name="priority" ng-model="list.newTask.priority">
-      <option value="Urgent">Urgent</option>
-      <option value="Normal">Normal</option>
-      <option value="Meh" selected>Meh</option>
-    </select> -->
-
+      <label class="label-text">Title:</label>
+      <input type="text" ng-model="list.newTask.title">
+      <label class="label-text">Note:</label>
+      <input type="text" ng-model="list.newTask.description">
+      <label class="label-text">Date Due:</label>
+      <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
+      
     <div class="button-group">
       <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)">Create</button>
     </div>

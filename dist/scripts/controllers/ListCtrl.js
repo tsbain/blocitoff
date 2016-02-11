@@ -25,19 +25,11 @@
       return dayDiff >= 7;
     }
 
-    this.toggle = function(task) {
+  this.toggle = function(task) {
       task.completed = !task.completed;
       this.tasks.$save(task).then(function(ref) {
-        // console.log(ref, 'save was successful');
-        // console.log(task.completed);
       });
     }
-
-
-    // this.completeTask = function(task) {
-    //   // task.completed = true;
-    //
-    // }
 
   }
 

@@ -12,7 +12,6 @@
         <td class="icons">
           <a href ng-click="settings = !settings"></a><i class="material-icons md-36" id="settings" title="Settings">settings</i></a>
           <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Create a Task">create</i></a>
-          <!-- <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Delete a Task">delete</i></a> -->
           <a ui-sref="history"><i class="material-icons md-36" title="Task History">history</i></a>
         </td>
       </tr>
@@ -23,17 +22,15 @@
         <th ng-click="sortBy='title';reverse = !reverse">Task</th>
         <th>Note</th>
         <th ng-click="sortBy='dueDate';reverse = !reverse">Due</th>
-        <!-- <th ng-click="sortBy='priority';reverse = !reverse">Priority</th> -->
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
       <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" ng-hide="list.shouldHideTask(task) || task.completed">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
         <td class="col-lg-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
-        <!-- <td class="col-md-2" id="priority">{{ task.priority }}</td> -->
         <td class="col-md-2" id="done">
           <label>
-            <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task)">
+            <input type="checkbox" class="checkbox" id="done" ng-model="delayedModel" debounce="500" ng-click="list.toggle(task)">
           </label>
         </td>
       </tr>

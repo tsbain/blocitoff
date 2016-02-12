@@ -22,12 +22,13 @@
       // set boolean value for ng-hide directive
       var diff = today.getTime() - task.dateCreated;
       var dayDiff = Math.round(diff/oneDay);
-      return dayDiff >= 7;
+      return dayDiff >= 30;
     }
 
-  this.toggle = function(task) {
+  this.toggle = function(task, index) {
       task.completed = !task.completed;
-      this.tasks.$save(task).then(function(ref) {
+      this.tasks.$save(task).then(function() {
+        scope.tasks.splice(index, 1);
       });
     }
 

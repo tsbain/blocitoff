@@ -19,9 +19,8 @@
       task.completed = !task.completed;
       this.tasks.$save(task).then(function(ref) {
         // console.log(ref, 'save was successful');
-        // console.log(task.completed);
+        console.log(task.completed);
       });
-
     }
 
     // Use to create a service that calculates task age

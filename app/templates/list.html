@@ -10,9 +10,9 @@
     <table class="task-list table">
       <tr>
         <td class="icons">
-          <a href ng-click="settings = !settings"></a><i class="material-icons md-36" id="settings" title="Settings">settings</i></a>
-          <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Create a Task">create</i></a>
-          <a ui-sref="history"><i class="material-icons md-36" title="Task History">history</i></a>
+          <a href ng-click="settings = !settings"></a><i class="material-icons md-light md-36" id="settings" title="Settings">settings</i></a>
+          <a ui-sref="history"><i class="material-icons md-light md-36" title="Task History">history</i></a>
+          <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" title="Create a Task">create</i></a>
         </td>
       </tr>
       <tr>
@@ -24,13 +24,13 @@
         <th ng-click="sortBy='dueDate';reverse = !reverse">Due</th>
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" ng-hide="list.shouldHideTask(task) || task.completed">
+      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" class="disappear">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
         <td class="col-lg-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
         <td class="col-md-2" id="done">
           <label>
-            <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task)">
+            <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task, $index)">
           </label>
         </td>
       </tr>
@@ -44,7 +44,7 @@
   <hr></hr>
 
   <form class="form-group" ng-show="addTask">
-    <a href ng-click="addTask = !addTask"><i class="material-icons md-36" title="Close">clear</i></a>
+    <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" id="closeForm" title="Close">clear</i></a>
     </br>
     <h2>Create a New Task</h2>
     <hr></hr>
@@ -54,23 +54,10 @@
       <input type="text" ng-model="list.newTask.description">
       <label class="label-text">Date Due:</label>
       <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
-      
+
     <div class="button-group">
       <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)">Create</button>
     </div>
   </form>
-
-  <!-- <form class="form-group" ng-show="deleteTask">
-    <a href ng-click="deleteTask = !deleteTask"><i class="material-icons md-36" title="Close">clear</i></a>
-    </br>
-    <h2>Delete Checked Tasks</h2>
-    <hr></hr>
-    <i class="material-icons md-36" id="warning" title="Warning!">warning</i>
-    <h4>Warning:  You will have to recreate these tasks if you need them again!</h4>
-    <br></br>
-    <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.removeTask(list.newTask)">Delete</button>
-    </div>
-  </form> -->
 
 </section>

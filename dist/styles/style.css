@@ -23,7 +23,7 @@ h1 {
   color: #fff;
   font-size: 5.0rem;
   text-align: center;
-  margin: 10rem auto 0 auto;
+  margin: 10rem auto -5rem auto;
 }
 
 h2 {
@@ -34,9 +34,23 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 75px;
+  margin: 0 auto;
+  width: 50%;
+  line-height: 3.25rem;
+  letter-spacing: .125rem;
+}
+
 h4 {
   color: #333;
   text-align: center;
+}
+
+.rule {
+  color: #1AB696;
 }
 
 .task-heading {
@@ -63,7 +77,7 @@ th {
 }
 
 .task-list {
-  width: 80%;
+  /*width: 80%;*/
   height: 80%;
   text-align: center;
   margin: 0px auto 50px auto;
@@ -93,6 +107,7 @@ td {
 #completed {
   color: #1AB619;
   font-size: 36px;
+  float: right;
 }
 
 .checkbox {
@@ -191,7 +206,6 @@ select:focus {
   text-align: center;
   font-style: normal;
   border-radius: 10px;
-  /*width: 30%;*/
   border: 1px solid #1AB696;
   border-color: #1AB696;
   margin-bottom: 10px;
@@ -216,6 +230,26 @@ select:focus {
 
 .btn:focus,.btn:active {
    outline: none !important;
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 125px;
+}
+
+#findOut {
+  margin: 10px auto !important;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  border-color: #333;
+}
+
+#findOut:hover {
+  color: #000;
+  border-color: #fff;
+  background-color: #fff;
 }
 
 pre {
@@ -267,6 +301,10 @@ a:visited, a:active {
 
 /* Start of history template styling */
 
+#historyTable {
+  width: 85.5%;
+}
+
 #historyTitle {
   text-decoration: line-through;
 }
@@ -274,7 +312,7 @@ a:visited, a:active {
 #notCompleted {
   color: #1AB619;
   font-size: 36px;
-  margin-right: 10px;
+  float: right;
 }
 
 .disappear {

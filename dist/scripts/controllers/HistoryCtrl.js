@@ -12,16 +12,23 @@
       // set boolean value for ng-show directive
       var diff = today.getTime() - task.dateCreated;
       var dayDiff = Math.round(diff/oneDay);
-      return dayDiff >= 7;
+      return dayDiff >= 30;
       }
 
-    this.toggle = function(task) {
+    this.toggle = function(task, index) {
       task.completed = !task.completed;
-      this.tasks.$save(task).then(function(ref) {
-        // console.log(ref, 'save was successful');
-        console.log(task.completed);
+      this.tasks.$save(task).then(function() {
+        scope.tasks.splice(index, 1);
       });
     }
+
+    // this.toggle = function(task) {
+    //   task.completed = !task.completed;
+    //   this.tasks.$save(task).then(function(ref) {
+    //     // console.log(ref, 'save was successful');
+    //     // console.log(task.completed);
+    //   });
+    // }
 
     // Use to create a service that calculates task age
 

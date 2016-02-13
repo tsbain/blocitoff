@@ -18,7 +18,7 @@
         <td class="icons">
           <a href ng-click="settings = !settings"></a><i class="material-icons md-light md-36" id="settings" title="Settings">settings</i></a>
           <a ui-sref="history"><i class="material-icons md-light md-36" title="Task History">history</i></a>
-          <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" title="Create a Task">create</i></a>
+          <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" data-target="#myModalNorm" title="Create a Task">create</i></a>
         </td>
       </tr>
       <tr>
@@ -45,8 +45,8 @@
 
 </section>
 
-<section id="form" class="add-tasks"> <!-- create new tasks -->
-
+<!-- <section id="form" class="add-tasks">
+<!--  -->
   <form class="form-group" ng-show="addTask">
     <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" id="closeForm" title="Close">clear</i></a>
     </br>
@@ -64,4 +64,4 @@
     </div>
   </form>
 
-</section>
+</section> -->

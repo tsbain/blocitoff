@@ -30,7 +30,7 @@
         <th ng-click="sortBy='dueDate';reverse = !reverse">Due</th>
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in list.tasks | orderBy:sortBy:reverse" class="disappear">
+      <tr ng-repeat="task in list.tasks | notCompleted" class="disappear">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
         <td class="col-md-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
@@ -45,8 +45,8 @@
 
 </section>
 
-<!-- <section id="form" class="add-tasks">
-<!--  -->
+<section id="form" class="add-tasks">
+
   <form class="form-group" ng-show="addTask">
     <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" id="closeForm" title="Close">clear</i></a>
     </br>
@@ -64,4 +64,4 @@
     </div>
   </form>
 
-</section> -->
+</section>

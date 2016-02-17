@@ -309,7 +309,7 @@ a:visited, a:active {
   text-decoration: line-through;
 }
 
-#notCompleted {
+#not {
   color: #1AB619;
   font-size: 36px;
   float: right;

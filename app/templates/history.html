@@ -20,9 +20,9 @@
       </tr>
       <tr class="list-headings">
         <th ng-click="sortBy='title';reverse=!reverse">Task</th>
-        <th><i class="material-icons md-36" id="notCompleted" title="Not Completed">done</i></th>
+        <th><i class="material-icons md-36" id="not" title="Not Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in history.tasks | orderBy:sortBy:reverse" class="disappear">
+      <tr ng-repeat="task in history.tasks | completed" class="disappear">
         <td class="col-md-12" id="historyTitle">{{ task.title }}</td>
         <td class="col-md-2" id="done">
           <label>

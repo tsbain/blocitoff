@@ -1,58 +1,78 @@
-(function() {
-  function ListCtrl($firebaseArray) {
-    var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
-    var scope = this;
-    var oneDay = 1000 * 60 * 60 * 24;
-    var today = new Date();
+// (function() {
+//   function ListCtrl($firebaseArray) {
+//     var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
+//     var scope = this;
+//     var oneDay = 1000 * 60 * 60 * 24;
+//     var today = new Date();
+//
+//     this.tasks = $firebaseArray(ref);
+//     this.newTask = {};
+//
+//     this.createTask = function(task) {
+//       task.dueDate = task.dateObject.getTime();
+//       delete task.dateObject;
+//       task.dateCreated = Firebase.ServerValue.TIMESTAMP;
+//       task.completed = false;
+//       scope.tasks.$add(task).then(function(ref) {
+//         scope.newTask = {};
+//       });
+//     }
+//
+//     this.shouldHideTask = function(task) {
+//       // set boolean value for ng-hide directive
+//       var diff = today.getTime() - task.dateCreated;
+//       var dayDiff = Math.round(diff/oneDay);
+//       return dayDiff >= 30;
+//     }
+//
+//   this.toggle = function(task, index) {
+//       task.completed = !task.completed;
+//       this.tasks.$save(task).then(function() {
+//         scope.tasks.splice(index, 1);
+//       });
+//     }
+//
+//   }
+//
+//   angular
+//     .module('blocitoff')
+//     .controller('ListCtrl', ListCtrl);
+// }());
 
-    this.tasks = $firebaseArray(ref);
-    this.newTask = {};
+// Controller Refactor Attempt
+//
+var app = angular.module('blocitoff');
+app.controller("ListCtrl", function($scope, $firebaseArray) {
+  var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
+  // var scope = this;
+  var oneDay = 1000 * 60 * 60 * 24;
+  var today = new Date();
 
-    this.createTask = function(task) {
-      task.dueDate = task.dateObject.getTime();
-      delete task.dateObject;
-      task.dateCreated = Firebase.ServerValue.TIMESTAMP;
-      task.completed = false;
-      scope.tasks.$add(task).then(function(ref) {
-        scope.newTask = {};
-      });
-    }
+  $scope.tasks = $firebaseArray(ref);
+  $scope.newTask = {};
 
-    this.shouldHideTask = function(task) {
-      // set boolean value for ng-hide directive
-      var diff = today.getTime() - task.dateCreated;
-      var dayDiff = Math.round(diff/oneDay);
-      return dayDiff >= 30;
-    }
-
-  this.toggle = function(task, index) {
-      task.completed = !task.completed;
-      this.tasks.$save(task).then(function() {
-        scope.tasks.splice(index, 1);
-      });
-    }
-
+  $scope.createTask = function(task) {
+    task.dueDate = task.dateObject.getTime();
+    delete task.dateObject;
+    task.dateCreated = Firebase.ServerValue.TIMESTAMP;
+    task.completed = false;
+    $scope.tasks.$add(task).then(function(ref) {
+      $scope.newTask = {};
+    });
   }
 
-  angular
-    .module('blocitoff')
-    .controller('ListCtrl', ListCtrl);
-}());
+  $scope.shouldHideTask = function(task) {
+    // set boolean value for ng-hide directive
+    var diff = today.getTime() - task.dateCreated;
+    var dayDiff = Math.round(diff/oneDay);
+    return dayDiff >= 30;
+  }
 
-//   Controller Refactor Attempt
-//
-// app.controller("ListCtrl", function($scope, $firebaseArray) {
-//   var ref = new Firebase("https://brilliant-torch-3503.firebaseio.com/tasks");
-//   // var scope = this;
-//
-//   $scope.tasks = $firebaseArray(ref);
-//   $scope.newTask = {};
-//
-//   $scope.createTask = function(task) {
-//     task.date = task.dateObject.getTime();
-//     delete task.dateObject;
-//     scope.tasks.$add(task).then(function(ref) {
-//       scope.newTask = {};
-//     };
-//   })
-// });
+  $scope.toggle = function(task, index) {
+      task.completed = !task.completed;
+      this.tasks.$save(task).then(function() {
+        $scope.tasks.splice(index, 1);
+      });
+    }
+
+});

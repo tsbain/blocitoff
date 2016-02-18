@@ -1,6 +1,6 @@
 <section> <!-- hero content -->
 
-    <h1>{{ list.heroTitle }}</h1>
+    <h1>{{ heroTitle }}</h1>
     <h3>This isn't your mom's wimpy task app. Unless your mom is serious about getting sh*t done and doesn't whine about having to do it.</h3>
     <h3>Then maybe it is.</h3>
 
@@ -30,13 +30,13 @@
         <th ng-click="sortBy='dueDate';reverse = !reverse">Due</th>
         <th><i class="material-icons md-36" id="completed" title="Completed">done</i></th>
       </tr>
-      <tr ng-repeat="task in list.tasks | notCompleted | orderBy:sortBy:reverse" class="disappear">
+      <tr ng-repeat="task in tasks | notCompleted | orderBy:sortBy:reverse" class="disappear">
         <td class="col-md-4" id="title">{{ task.title }}</td>
         <td class="col-md-6" id="desc">{{ task.description }}</td>
         <td class="col-md-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
         <td class="col-md-2" id="done">
           <label>
-            <input type="checkbox" class="checkbox" id="done" ng-click="list.toggle(task, $index)">
+            <input type="checkbox" class="checkbox" id="done" ng-click="toggle(task, $index)">
           </label>
         </td>
       </tr>

@@ -3,7 +3,7 @@
     return function(tasks) {
       var completedTasks = [];
       angular.forEach(tasks, function(task, index) {
-        if (task.completed === true) completedTasks.push(task);
+        if (task.completed) completedTasks.push(task);
       })
       return completedTasks;
     }
@@ -19,7 +19,7 @@
     return function(tasks) {
       var completedTasks = [];
       angular.forEach(tasks, function(task, index) {
-        if (task.completed === false) completedTasks.push(task);
+        if (!task.completed) completedTasks.push(task);
       })
       return completedTasks;
     }

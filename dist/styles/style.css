@@ -13,14 +13,14 @@ body {
   font-size: 18px;
   color: #333;
   min-height: 100%;
-  background-image: url(../assets/images/bg3.jpg);
+  background-image: url(../assets/images/bg9.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 h1 {
   width: 40%;
-  color: #fff;
+  color: #E5C100;
   font-size: 5.0rem;
   text-align: center;
   margin: 10rem auto -5rem auto;
@@ -28,7 +28,7 @@ h1 {
 
 h2 {
   font-family: 'Open Sans';
-  color: #1AB696;
+  color: #1A8CB6;
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
@@ -50,7 +50,7 @@ h4 {
 }
 
 .rule {
-  color: #1AB696;
+  color: #E5C100;
 }
 
 .task-heading {
@@ -58,7 +58,7 @@ h4 {
   font-weight: 400;
   font-size: 2.75rem;
   color: #fff;
-  background-color: #1AB696;
+  background-color: #E5C100;
   text-align: center;
 }
 
@@ -70,7 +70,7 @@ h4 {
 }
 
 th {
-  border-bottom: 1px solid #1AB696;
+  border-bottom: 1px solid #E5C100;
   font-size: 2.0rem;
   vertical-align: bottom !important;
   padding-bottom: 0px !important;
@@ -200,14 +200,14 @@ select:focus {
 
 .btn {
   padding: 10px 30px 10px 30px;
-  color: #1AB696;
+  color: #E5C100;
   background-color: transparent;
   font-size: 28px;
   text-align: center;
   font-style: normal;
   border-radius: 10px;
-  border: 1px solid #1AB696;
-  border-color: #1AB696;
+  border: 1px solid #E5C100;
+  border-color: #E5C100;
   margin-bottom: 10px;
   margin-top: 10px;
   transition-property: background;
@@ -216,15 +216,15 @@ select:focus {
 }
 
 .btn:hover {
-  background-color: #1AB696;
-  border-color: #1AB696;
+  background-color: #E5C100;
+  border-color: #E5C100;
   color: #fff;
 
 }
 
 .btn:focus {
-  background-color: #1AB696;
-  border-color: #1AB696;
+  background-color: transparent;
+  border-color: #E5C100;
   color: #fff;
 }
 
@@ -239,17 +239,42 @@ select:focus {
 }
 
 #findOut {
-  margin: 10px auto !important;
-  margin-bottom: 30px;
+  margin: 10px 15px 30px auto; !important;
+  /*margin-bottom: 30px;*/
   text-align: center;
   color: #333;
   border-color: #333;
 }
 
 #findOut:hover {
-  color: #000;
-  border-color: #fff;
-  background-color: #fff;
+  color: #E5C100;
+  border-color: #E5C100;
+  background-color: transparent;
+}
+
+#findOut:active {
+  background-color: transparent !important:
+}
+
+#getStarted {
+  margin: 10px auto 30px 15px; !important;
+  padding-left: 35px;
+  padding-right: 35px;
+  /*margin: 10px auto !important;
+  margin-bottom: 30px;*/
+  text-align: center;
+  color: #E5C100;
+  border-color: #E5C100;
+}
+
+#getStarted:hover {
+  color: #333;
+  border-color: #333;
+  background-color: transparent;
+}
+
+#getStarted:active {
+  background-color: none !important;
 }
 
 pre {

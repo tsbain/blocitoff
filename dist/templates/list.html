@@ -6,19 +6,22 @@
 
     <div class="wrapper">
       <button type="button" class="btn" id="findOut">Find Out Why</button>
+      <button type="button" class="btn" id="getStarted" ng-click="taskTable = !taskTable">Get Started</button>
     </div>
+    <!-- ui-sref="list" -->
+
 
 </section>
 
 <section class="container"> <!-- task list -->
 
   <div>
-    <table class="task-list table">
+    <table class="task-list table" ng-show="taskTable">
       <tr>
         <td class="icons">
           <a href ng-click="settings = !settings"></a><i class="material-icons md-light md-36" id="settings" title="Settings">settings</i></a>
           <a ui-sref="history"><i class="material-icons md-light md-36" title="Task History">history</i></a>
-          <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" data-target="#myModalNorm" title="Create a Task">create</i></a>
+          <a href ng-click="addTask = !addTask"><i class="material-icons md-light md-36" title="Create a Task">create</i></a>
         </td>
       </tr>
       <tr>

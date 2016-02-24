@@ -1,22 +1,13 @@
 <section> <!-- hero content -->
 
     <h1>{{ heroTitle }}</h1>
-    <h3>This isn't your mom's wimpy task app. Unless your mom is serious about getting sh*t done and doesn't whine about having to do it.</h3>
-    <h3>Then maybe it is.</h3>
-
-    <div class="wrapper">
-      <button type="button" class="btn" id="findOut">Find Out Why</button>
-      <button type="button" class="btn" id="getStarted" ng-click="taskTable = !taskTable">Get Started</button>
-    </div>
-    <!-- ui-sref="list" -->
-
-
+    
 </section>
 
 <section class="container"> <!-- task list -->
 
   <div>
-    <table class="task-list table" ng-show="taskTable">
+    <table class="task-list table">
       <tr>
         <td class="icons">
           <a href ng-click="settings = !settings"></a><i class="material-icons md-light md-36" id="settings" title="Settings">settings</i></a>

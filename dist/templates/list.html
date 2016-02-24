@@ -1,7 +1,7 @@
 <section> <!-- hero content -->
 
     <h1>{{ heroTitle }}</h1>
-    
+
 </section>
 
 <section class="container"> <!-- task list -->
@@ -47,14 +47,14 @@
     <h2>Create a New Task</h2>
     <hr></hr>
       <label class="label-text">Title:</label>
-      <input type="text" ng-model="list.newTask.title">
+      <input type="text" ng-model="newTask.title">
       <label class="label-text">Note:</label>
-      <input type="text" ng-model="list.newTask.description">
+      <input type="text" ng-model="newTask.description">
       <label class="label-text">Date Due:</label>
-      <input type="date" ng-model="list.newTask.dateObject" placeholder="mm/dd/yyyy">
+      <input type="date" ng-model="newTask.dateObject" placeholder="mm/dd/yyyy">
 
     <div class="button-group">
-      <button type="button" name="button" class="btn" ng-click="list.createTask(list.newTask)">Create</button>
+      <button type="button" name="button" class="btn" ng-click="createTask(newTask)">Create</button>
     </div>
   </form>
 

@@ -25,6 +25,6 @@
   }
 
   angular
-    .module('blocitoff', ['ui.router', 'firebase', 'ngAnimate'])
+    .module('blocitoff', ['ui.router', 'firebase', 'ngAnimate', 'ngMaterial', 'ngMessages'])
     .config(config);
 })();

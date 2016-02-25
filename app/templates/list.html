@@ -6,7 +6,38 @@
 
 <section class="container"> <!-- task list -->
 
-  <div>
+  <div class="fresh-table toolbar-color-azure">
+    <div class="toolbar">
+      <button id="alertBtn" class="btn btn-default">Home</button>
+    </div>
+
+    <table id="fresh-table" class="table">
+      <thead>
+        <th data-field="id">ID</th>
+      	<th data-field="name">Task</th>
+      	<th data-field="salary">Description</th>
+      	<th data-field="country">Due</th>
+      	<th data-field="city">Done</th>
+      	<th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+      </thead>
+      <tbody>
+
+      </tbody>
+        <tr ng-repeat="task in tasks | notCompleted | orderBy:sortBy:reverse" class="disappear">
+          <td class="col-md-4" id="title">{{ task.title }}</td>
+          <td class="col-md-6" id="desc">{{ task.description }}</td>
+          <td class="col-md-2" id="date">{{ task.dueDate | date: 'shortDate' }}</td>
+          <td class="col-md-2" id="done">
+            <label>
+              <input type="checkbox" class="checkbox" id="done" ng-click="toggle(task, $index)">
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <div>
     <table class="task-list table">
       <tr>
         <td class="icons">
@@ -35,7 +66,7 @@
         </td>
       </tr>
     </table>
-  </div>
+  </div> -->
 
 </section>
 
